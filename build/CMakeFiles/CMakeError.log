@@ -1,0 +1,115 @@
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_740af/fast && /usr/bin/make  -f CMakeFiles/cmTC_740af.dir/build.make CMakeFiles/cmTC_740af.dir/build
+make[1]: Entering directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_740af.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles/cmTC_740af.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.23/Modules/CheckFunctionExists.c
+Linking C executable cmTC_740af
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_740af.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_740af.dir/CheckFunctionExists.c.o -o cmTC_740af 
+/usr/bin/ld: CMakeFiles/cmTC_740af.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_740af.dir/build.make:99: cmTC_740af] Error 1
+make[1]: Leaving directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_740af/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4b36a/fast && /usr/bin/make  -f CMakeFiles/cmTC_4b36a.dir/build.make CMakeFiles/cmTC_4b36a.dir/build
+make[1]: Entering directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b36a.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4b36a.dir/src.c.o -c /home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4b36a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b36a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4b36a.dir/src.c.o -o cmTC_4b36a 
+/usr/bin/ld: CMakeFiles/cmTC_4b36a.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_4b36a.dir/build.make:99: cmTC_4b36a] Error 1
+make[1]: Leaving directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_4b36a/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_19ce9/fast && /usr/bin/make  -f CMakeFiles/cmTC_19ce9.dir/build.make CMakeFiles/cmTC_19ce9.dir/build
+make[1]: Entering directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_19ce9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_19ce9.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.23/Modules/CheckFunctionExists.c
+Linking C executable cmTC_19ce9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19ce9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_19ce9.dir/CheckFunctionExists.c.o -o cmTC_19ce9  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_19ce9.dir/build.make:99: cmTC_19ce9] Error 1
+make[1]: Leaving directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_19ce9/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_12a84/fast && /usr/bin/make  -f CMakeFiles/cmTC_12a84.dir/build.make CMakeFiles/cmTC_12a84.dir/build
+make[1]: Entering directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_12a84.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_12a84.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.23/Modules/CheckFunctionExists.c
+Linking C executable cmTC_12a84
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12a84.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_12a84.dir/CheckFunctionExists.c.o -o cmTC_12a84  /usr/lib/x86_64-linux-gnu/libblas.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so -lpthread -lm -ldl 
+/usr/bin/ld: CMakeFiles/cmTC_12a84.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_12a84.dir/build.make:102: cmTC_12a84] Error 1
+make[1]: Leaving directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_12a84/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7d59f/fast && /usr/bin/make  -f CMakeFiles/cmTC_7d59f.dir/build.make CMakeFiles/cmTC_7d59f.dir/build
+make[1]: Entering directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7d59f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_7d59f.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.23/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7d59f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d59f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_7d59f.dir/CheckFunctionExists.c.o -o cmTC_7d59f  /usr/lib/x86_64-linux-gnu/liblapack.so /usr/lib/x86_64-linux-gnu/libblas.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so -fortranlibs 
+cc: error: unrecognized command line option ‘-fortranlibs’
+make[1]: *** [CMakeFiles/cmTC_7d59f.dir/build.make:103: cmTC_7d59f] Error 1
+make[1]: Leaving directory '/home/eunsoo/slam/ceres_study/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_7d59f/fast] Error 2
+
+
+
